@@ -17,4 +17,8 @@ class PagesController extends Controller
     public function meals(){
         return view('meals');
     }
+
+    public function create(){
+        return view('create');
+    }
 }

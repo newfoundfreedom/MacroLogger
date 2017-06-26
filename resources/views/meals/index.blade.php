@@ -9,7 +9,8 @@
         <ul class="list-group">
             @foreach($meals as $meal)
                 <li class="list-group-item"><a href="/meals/{{$meal->id}}">{{$meal->name}}</a>
-                    <span class="pull-right">{{$meal->created_at}}</span>
+                    <span class="pull-right">{{ $meal->created_at->subHour(4)->format('g:i a \o\n l, F jS') }}</span>
+
                 </li>
             @endforeach
         </ul>

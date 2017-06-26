@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h2>{{$meal->name}}</h2><span class="">{{$meal->created_at}}</span>
+    <h2 class="meal-name">{{$meal->name}}</h2><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{$meal->created_at}}</span>
     <br>
     <span class="label label-primary"> kCal</span>
     <span class="label label-default">g Protein</span>

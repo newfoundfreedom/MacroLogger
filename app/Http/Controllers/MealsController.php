@@ -14,7 +14,8 @@ class MealsController extends Controller
      */
     public function index()
     {
-        $meals = Meal::all();
+//        $meals = Meal::all();
+        $meals = Meal::orderby('created_at', 'desc')->get();
         return view('meals.index')->with('meals', $meals);
     }
 
@@ -31,18 +32,29 @@ class MealsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        // ensure that the name field is not blank
+        $this->validate($request, [
+            'name' => 'required',
+        ]);
+
+        // Save meal name to database
+        $meal = new Meal;
+        $meal->name = $request->input('name');
+        $meal->save();
+
+        // Redirect to the meal just created so that user can input foods
+        return redirect('/meals/' . $meal->id);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -54,7 +66,7 @@ class MealsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -65,8 +77,8 @@ class MealsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -77,7 +89,7 @@ class MealsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

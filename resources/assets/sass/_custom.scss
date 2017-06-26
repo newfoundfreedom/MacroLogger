@@ -1,7 +1,15 @@
-//body {
-//  background-color: lightblue;
-//}
-//
-//* {
-//  border-radius: 0 !important;
-//}
+.meal-name {
+  display: inline;
+}
+
+.navbar-default {
+  background-color: $brand-primary;
+}
+
+.nav.navbar-nav li a {
+  color: #fff !important;
+}
+
+a.navbar-brand {
+  color: #fff !important;
+}

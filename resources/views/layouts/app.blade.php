@@ -21,8 +21,6 @@
 
     @include('inc.navbar')
 
-    <example>test</example>
-
     <div class="container">
         @include('inc.messages')
         @yield('content')

@@ -8350,11 +8350,3 @@ button.close {
   }
 }
 
-body {
-  background-color: lightblue;
-}
-
-* {
-  border-radius: 0 !important;
-}
-

@@ -13,12 +13,4 @@ class PagesController extends Controller
         );
         return view('home')->with($data);
     }
-
-    public function meals(){
-        return view('meals');
-    }
-
-    public function create(){
-        return view('create');
-    }
 }

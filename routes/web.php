@@ -15,7 +15,9 @@ Route::get('/', 'PagesController@home');
 
 Route::get('/meals', 'PagesController@meals');
 
-Route::get('/meals/create', 'PagesController@create');
+//Route::get('/meals/create', 'PagesController@create');
+
+Route::resource('meals', 'MealsController');
 
 //Route::get('/hello', function () {
 //    return 'Hello World';

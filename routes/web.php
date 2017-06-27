@@ -22,3 +22,6 @@ Route::resource('meals', 'MealsController');
 //Route::get('/hello', function () {
 //    return 'Hello World';
 //});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

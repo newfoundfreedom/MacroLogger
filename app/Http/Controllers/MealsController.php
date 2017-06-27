@@ -45,6 +45,7 @@ class MealsController extends Controller
         // Save meal name to database
         $meal = new Meal;
         $meal->name = $request->input('name');
+        $meal->user_id = auth()->user()->id;
         $meal->save();
 
         // Redirect to the meal just created so that user can input foods

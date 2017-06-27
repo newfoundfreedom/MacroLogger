@@ -7,10 +7,11 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
     public function home(){
-        $data = array(
-            'title' => 'Homepage',
-            'macros' => ['Carb', 'Protein', 'Fat']
-        );
-        return view('home')->with($data);
+        return view('home');
     }
+
+    public function welcome(){
+        return view('welcome');
+    }
+
 }

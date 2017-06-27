@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'PagesController@home');
+Route::get('/', 'PagesController@welcome');
 
 Route::get('/meals', 'PagesController@meals');
 
@@ -25,3 +25,5 @@ Route::resource('meals', 'MealsController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/welcome', 'HomeController@index')->name('welcome');

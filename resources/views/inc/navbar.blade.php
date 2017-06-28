@@ -18,9 +18,11 @@
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
-                <li><a href="/">Home</a></li>
-                <li><a href="/meals/create">Add Meal</a></li>
-                <li><a href="/meals">All Meals</a></li>
+                @if(!Auth::guest())
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/meals/create">Add Meal</a></li>
+                    <li><a href="/meals">All Meals</a></li>
+                @endif
             </ul>
 
             <!-- Right Side Of Navbar -->

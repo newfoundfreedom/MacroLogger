@@ -12,7 +12,7 @@
             </button>
 
             <!-- Branding Image -->
-            <a class="navbar-brand" href="/">{{config('app.name', 'MyFitnessBuddy')}}</a>
+            <a class="navbar-brand" href="/">{{config('app.name', 'MacroLogger')}}</a>
         </div>
 
         <div class="collapse navbar-collapse" id="app-navbar-collapse">

@@ -19,7 +19,7 @@
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
                 @if(!Auth::guest())
-                    <li><a href="/">Home</a></li>
+                    <li><a href="/home">Home</a></li>
                     <li><a href="/meals/create">Add Meal</a></li>
                     <li><a href="/meals">All Meals</a></li>
                 @endif
@@ -39,13 +39,13 @@
 
                         <ul class="dropdown-menu" role="menu">
                             <li>
-                                <a href="/home">Home</a>
+                                <a href="/home"><span class="nav-dropdown-text">Home</span></a>
                             </li>
                             <li>
                                 <a href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                    Logout
+                                    <span class="nav-dropdown-text">Logout</span>
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
